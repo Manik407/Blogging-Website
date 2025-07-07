@@ -9,6 +9,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import  "./Navbar.css"
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import HistoryIcon from '@mui/icons-material/History';
 export default function ButtonAppBar(props) {
     const location = useLocation();
   const navigate = useNavigate();
@@ -27,6 +29,16 @@ export default function ButtonAppBar(props) {
             navigate("/");
           }}>
             Blog.
+          </Typography>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} onClick={()=>{
+            navigate("/trending");
+          }}>
+            Trending<TrendingUpIcon fontSize='large'/>
+          </Typography>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} onClick={()=>{
+            navigate("/new");
+          }}>
+            New<HistoryIcon fontSize='large'/>
           </Typography>
           <button className='createButton'  onClick={()=>{
             navigate("/createpost");

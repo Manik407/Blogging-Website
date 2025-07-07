@@ -29,6 +29,7 @@ function CreatePost(props) {
   }
   function save(post) {
     setisSaving(true);
+    console.log(`${import.meta.env.VITE_REACT_APP_SERVER_URL}` + "/success");
     axios
       .post(
         `${import.meta.env.VITE_REACT_APP_SERVER_URL}` + "/success",
@@ -52,7 +53,7 @@ function CreatePost(props) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message);
       });
   }
   return (
